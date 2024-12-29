@@ -1,0 +1,12 @@
+[Unit]
+Description=Sistema de Geração de Chaves PIX
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /srv-pix/app/pix_generator.py
+Restart=always
+User=vagrant
+WorkingDirectory=/srv-pix/app
+
+[Install]
+WantedBy=multi-user.target
